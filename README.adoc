@@ -1,4 +1,4 @@
-=== Running the app:
+=== Running the app
 
 Go to the root of the repository.
 
@@ -9,4 +9,4 @@ Make sure you have Kafka broker running. The application expects it to be on def
 Start the application preferrably in an IDE.
 
 Set a breakpoint on KStreamBinder method doBindProducer and examine the extended producer properties object.
-Verify that you are seeing the topic level properties (which is the issue reported by https://github.com/spring-cloud/spring-cloud-stream-binder-kafka/issues/684.
+Verify that you are seeing the topic level properties (which is the issue reported by https://github.com/spring-cloud/spring-cloud-stream-binder-kafka/issues/684).
