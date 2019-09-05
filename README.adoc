@@ -1,0 +1,12 @@
+=== Running the app:
+
+Go to the root of the repository.
+
+Make sure you have Kafka broker running. The application expects it to be on defaults (localhost:9092). If thats not the case, change the configuration.
+
+`./mvnw clean package`
+
+Start the application preferrably in an IDE.
+
+Set a breakpoint on KStreamBinder method doBindProducer and examine the extended producer properties object.
+Verify that you are seeing the topic level properties (which is the issue reported by https://github.com/spring-cloud/spring-cloud-stream-binder-kafka/issues/684.

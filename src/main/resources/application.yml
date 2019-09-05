@@ -1,0 +1,28 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        myoutput:
+          destination: output-topic
+        myinput:
+          destination: input-topic
+          group: mygroup
+      kafka:
+        streams:
+          binder:
+           configuration:
+              commit.interval.ms: 3000
+              application.id: hello-world
+          bindings:
+            myoutput:
+              producer:
+                keySerde: org.apache.kafka.common.serialization.Serdes$StringSerde
+                valueSerde: org.apache.kafka.common.serialization.Serdes$StringSerde
+                topic.properties:
+                  cleanup.policy: compact
+            myinput:
+              consumer:
+                keySerde: org.apache.kafka.common.serialization.Serdes$StringSerde
+                valueSerde: org.apache.kafka.common.serialization.Serdes$StringSerde
+                topic.properties:
+                  cleanup.policy: compact
